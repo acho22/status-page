@@ -104,7 +104,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Image alt="Fiserv Developer Studio" src="/images/logo.jpg" height='162' width='740'/>
-      <h1 className={utilsSytles.heading2Xl}>Fiserv Developer Studio Status Page</h1>
+      <h1 className={utilsSytles.heading2Xl}>Fiserv Developer Studio Status</h1>
       
       <div class={flexBox.container}>
         <div>
