@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
+import useSWR from 'swr'
+import Collapsible from 'react-collapsible';
+
 import styles from '../styles/Home.module.css'
 import utilsSytles from '../styles/utils.module.css'
 import alertStyles from '../styles/alert.module.css'
-import useSWR from 'swr'
-import Collapsible from 'react-collapsible';
+import flexBox from '../styles/flex.module.css'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
@@ -104,19 +106,24 @@ export default function Home() {
       <Image alt="Fiserv Developer Studio" src="/images/logo.jpg" height='162' width='740'/>
       <h1 className={utilsSytles.heading2Xl}>Fiserv Developer Studio Status Page</h1>
       
-      <Healthcheck />
+      <div class={flexBox.container}>
+        <div>
+          <Healthcheck />
+        </div>
+        <div>
+          <h2 className={utilsSytles.headingLg}>
+            <Link href="https://twitter.com/fiservdevstudio">
+              <a>Get the latest updates on Twitter @fiservdevstudio.</a>
+            </Link>
+            </h2>
 
-      <h2 className={utilsSytles.headingLg}>
-        <Link href="https://twitter.com/fiservdevstudio">
-          <a>Get the latest updates on Twitter @fiservdevstudio.</a>
-        </Link>
-      </h2>
-
-      <h2 className={utilsSytles.headingLg}>
-        <Link href="https://github.com/fiserv/support/discussions">
-          <a>Join the conversation on Github Discussions.</a>
-        </Link>
-      </h2>
+          <h2 className={utilsSytles.headingLg}>
+            <Link href="https://github.com/fiserv/support/discussions">
+             <a>Join the conversation on Github Discussions.</a>
+            </Link>
+          </h2>
+        </div>
+      </div>
     </div>
   )
 }
